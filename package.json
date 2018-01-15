@@ -1,0 +1,23 @@
+{
+  "name": "peripheral-server",
+  "version": "0.0.1",
+  "description": "server for robotjs",
+  "main": "index.js",
+  "dependencies": {
+    "robotjs": "^0.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zaclittleberry/peripheral-server.git"
+  },
+  "author": "zaclittleberry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaclittleberry/peripheral-server/issues"
+  },
+  "homepage": "https://github.com/zaclittleberry/peripheral-server#readme"
+}
