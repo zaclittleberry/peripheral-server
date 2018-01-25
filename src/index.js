@@ -20,51 +20,31 @@ app.get('/mouse', (req, res) => {
   res.json(mouse);
 });
 
-app.get('/up', (req, res) => {
+app.post('/up/:amount', (req, res) => {
+  let amount = req.params.amount;
   var mouse = getMousePos();
-  robot.moveMouse(mouse.x, mouse.y - 1);
+  robot.moveMouse(mouse.x, mouse.y - amount);
   res.json({status:'OK'});
 });
 
-app.get('/up10', (req, res) => {
+app.post('/down/:amount', (req, res) => {
+  let amount = req.params.amount;
   var mouse = getMousePos();
-  robot.moveMouse(mouse.x, mouse.y - 10);
+  robot.moveMouse(mouse.x, mouse.y + amount);
   res.json({status:'OK'});
 });
 
-app.get('/down', (req, res) => {
+app.post('/left/:amount', (req, res) => {
+  let amount = req.params.amount;
   var mouse = getMousePos();
-  robot.moveMouse(mouse.x, mouse.y + 1);
+  robot.moveMouse(mouse.x - amount, mouse.y);
   res.json({status:'OK'});
 });
 
-app.get('/down10', (req, res) => {
+app.post('/right/:amount', (req, res) => {
+  let amount = req.params.amount;
   var mouse = getMousePos();
-  robot.moveMouse(mouse.x, mouse.y + 10);
-  res.json({status:'OK'});
-});
-
-app.get('/left', (req, res) => {
-  var mouse = getMousePos();
-  robot.moveMouse(mouse.x - 1, mouse.y);
-  res.json({status:'OK'});
-});
-
-app.get('/left10', (req, res) => {
-  var mouse = getMousePos();
-  robot.moveMouse(mouse.x - 10, mouse.y);
-  res.json({status:'OK'});
-});
-
-app.get('/right', (req, res) => {
-  var mouse = getMousePos();
-  robot.moveMouse(mouse.x + 1, mouse.y);
-  res.json({status:'OK'});
-});
-
-app.get('/right10', (req, res) => {
-  var mouse = getMousePos();
-  robot.moveMouse(mouse.x + 10, mouse.y);
+  robot.moveMouse(mouse.x + amount, mouse.y);
   res.json({status:'OK'});
 });
 
