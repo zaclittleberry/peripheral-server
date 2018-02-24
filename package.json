@@ -4,6 +4,7 @@
   "description": "server for robotjs",
   "main": "src/index.js",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "robotjs": "^0.4.7"
   },
